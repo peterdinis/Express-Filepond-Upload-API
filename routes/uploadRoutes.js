@@ -65,4 +65,6 @@ router.post("/api/upload", upload.single("filepond"), async (req, res) => {
   }
 });
 
+/* TODO: Add endpoint for delete all images and delete one image */
+
 export default router;
