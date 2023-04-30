@@ -1,0 +1,24 @@
+{
+  "name": "express-filepond-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "chalk": "^5.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "filepond": "^4.30.4",
+    "filepond-plugin-file-encode": "^2.1.10",
+    "filepond-plugin-image-preview": "^4.6.11",
+    "multer": "^1.4.5-lts.1",
+    "prisma": "^4.13.0"
+  }
+}
