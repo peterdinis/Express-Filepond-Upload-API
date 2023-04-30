@@ -7,9 +7,9 @@ export const getAllPhotos = async (req, res, next) => {
 
 export const getPhotoDetail = async (req, res, next) => {
   const { id } = req.params;
-  const imageInfo = await prisma.file.findFirst({
+  const imageInfo = await db.file.findFirst({
     where: {
-      id,
+      id: Number(id)
     },
   });
 
@@ -54,7 +54,7 @@ export const removeOneImage = async(req, res) =>{
   const { id } = req.params;
   const findOneImage = await db.file.findFirst({
     where: {
-      id
+      id: Number(id)
     }
   })
 
