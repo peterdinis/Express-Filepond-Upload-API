@@ -28,10 +28,23 @@ export const uploadNewPhoto = async (req, res) => {
     data: {
       name: filename,
       path,
+      customId: String(Math.floor(100000 + Math.random() * 900000))
     },
   });
 
   res.status(200).json({ id: savedFile.id });
 };
+
+export const findImageByName = async (req, res, next) => {
+  return;
+}
+
+export const removeOneImage = async(req, res) =>{
+  return;
+}
+
+export const deleteAllImages = async(req, res) =>{
+  return;
+}
 
 /* TODO: Add endpoint for delete all images and delete one image */
