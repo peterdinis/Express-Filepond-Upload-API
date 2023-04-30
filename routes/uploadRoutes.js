@@ -1,32 +1,12 @@
 import express from "express";
-import multer from "multer";
 import { PrismaClient } from "@prisma/client";
-import * as FilePond from "filepond";
+import {upload} from "../middleware/multer";
+import db from "../db";
 
 const router = express.Router();
 
-const filepond = FilePond.create({
-  allowMultiple: false,
-  allowRevert: false,
-  server: {
-    process: "/api/upload",
-  },
-});
-
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, "./uploads");
-    },
-    filename: (req, file, cb) => {
-      cb(null, `${Date.now()}-${file.originalname}`);
-    },
-  }),
-});
-
 router.get("/api/uploads/all", async(req, res) => {
-  const prisma = new PrismaClient();
-  const allPhotosInApp = await prisma.file.findMany({});
+  const allPhotosInApp = await db.file.findMany({});
   return res.json(allPhotosInApp);
 });
 
