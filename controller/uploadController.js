@@ -35,21 +35,6 @@ export const uploadNewPhoto = async (req, res) => {
   res.status(200).json({ id: savedFile.id });
 };
 
-export const findImageByName = async (req, res, next) => {
-  const {name} = req.params;
-  const findOneImage = await db.file.findFirst({
-    where: {
-      name
-    }
-  })
-
-  if(!findOneImage) {
-    return res.status(404).json("Image not found");
-  }
-
-  return res.json(findOneImage);
-}
-
 export const removeOneImage = async(req, res) =>{
   const { id } = req.params;
   const findOneImage = await db.file.findFirst({
