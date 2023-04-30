@@ -1,15 +1,14 @@
 import express from "express";
 import multer from "multer";
 import { PrismaClient } from "@prisma/client";
-import { Filepond } from "filepond";
+import * as FilePond from 'filepond';
 import filepondPluginFileEncode from "filepond-plugin-file-encode";
 import filepondPluginImagePreview from "filepond-plugin-image-preview";
 
-const filepond = Filepond();
 const router = express.Router();
 
-filepond.setOptions({
-  allowMultiple: false,
+const filepond = FilePond.create({
+    allowMultiple: false,
   allowRevert: false,
   server: {
     process: "/api/upload",
