@@ -1,4 +1,4 @@
-import db from "../db";
+import db from "../db.js";
 
 export const getAllPhotos = async (req, res, next) => {
   const allPhotosInApp = await db.file.findMany({});
@@ -18,6 +18,20 @@ export const getPhotoDetail = async (req, res, next) => {
   }
 
   return res.json(imageInfo);
+};
+
+export const uploadNewPhoto = async (req, res) => {
+  const { filename, path } = req.file;
+
+  // Save the file to the database
+  const savedFile = await db.file.create({
+    data: {
+      name: filename,
+      path,
+    },
+  });
+
+  res.status(200).json({ id: savedFile.id });
 };
 
 /* TODO: Add endpoint for delete all images and delete one image */
