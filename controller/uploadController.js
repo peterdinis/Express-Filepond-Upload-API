@@ -36,11 +36,39 @@ export const uploadNewPhoto = async (req, res) => {
 };
 
 export const findImageByName = async (req, res, next) => {
-  return;
+  const {name} = req.params;
+  const findOneImage = await db.file.findFirst({
+    where: {
+      name
+    }
+  })
+
+  if(!findOneImage) {
+    return res.status(404).json("Image not found");
+  }
+
+  return res.json(findOneImage);
 }
 
 export const removeOneImage = async(req, res) =>{
-  return;
+  const { id } = req.params;
+  const findOneImage = await db.file.findFirst({
+    where: {
+      id
+    }
+  })
+
+  if(!findOneImage) {
+    return res.status(404).json("Image not found");
+  }
+
+  const imageToDelete = await db.file.delete({
+    where: {
+      id: findOneImage.id
+    }
+  })
+
+  return res.json(imageToDelete);
 }
 
 export const deleteAllImages = async(req, res) =>{
