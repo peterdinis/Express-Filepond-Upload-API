@@ -28,6 +28,22 @@ router.get("/api/uploads/all", async(req, res) => {
   const prisma = new PrismaClient();
   const allPhotosInApp = await prisma.file.findMany({});
   return res.json(allPhotosInApp);
+});
+
+router.get("/api/detail/:id", async(req, res) => {
+  const prisma = new PrismaClient();
+  const {id} = req.params;
+  const imageInfo = await prisma.file.findFirst({
+    where: {
+      id
+    }
+  })
+
+  if(!imageInfo) {
+    return res.status(404).json("No image found");
+  }
+
+  return res.json(imageInfo);
 })
 
 router.post("/api/upload", upload.single("filepond"), async (req, res) => {
