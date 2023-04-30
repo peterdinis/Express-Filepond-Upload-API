@@ -24,6 +24,12 @@ const upload = multer({
   }),
 });
 
+router.get("/api/uploads/all", async(req, res) => {
+  const prisma = new PrismaClient();
+  const allPhotosInApp = await prisma.file.findMany({});
+  return res.json(allPhotosInApp);
+})
+
 router.post("/api/upload", upload.single("filepond"), async (req, res) => {
   try {
     const prisma = new PrismaClient();
