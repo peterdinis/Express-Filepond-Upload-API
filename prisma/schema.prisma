@@ -12,6 +12,7 @@ datasource db {
 
 model File {
   id        Int      @id @default(autoincrement())
+  customId  String?     @default(uuid())
   name      String
   path      String
 }
