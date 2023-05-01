@@ -1,8 +1,8 @@
 import express from "express";
-import { exampleEndpoint } from "../controller/exampleController";
+import { exampleUploadFn } from "../controller/exampleController.js";
 
 const router = express.Router();
 
-router.get("/example/upload", exampleEndpoint);
+router.get("/example/upload", exampleUploadFn);
 
 export default router;

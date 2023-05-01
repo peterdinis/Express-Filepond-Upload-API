@@ -1,3 +1,3 @@
-export const exampleEndpoint = (req, res) => {
-    return res.send("Upload api serever work");
+export const exampleUploadFn = (req, res) => {
+    return res.send('OK')
 }
