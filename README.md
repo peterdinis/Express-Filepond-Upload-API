@@ -18,6 +18,8 @@
 
 ### Filepond frontend example
 
+serverUrl = http://localhost:8500/api/upload
+
 `<FilePond files={files}
             onupdatefiles={handleFileUpload}
             allowMultiple={false}
