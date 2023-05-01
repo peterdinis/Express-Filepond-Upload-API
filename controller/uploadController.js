@@ -23,7 +23,6 @@ export const getPhotoDetail = async (req, res, next) => {
 export const uploadNewPhoto = async (req, res) => {
   const { filename, path } = req.file;
 
-  // Save the file to the database
   const savedFile = await db.file.create({
     data: {
       name: filename,
@@ -31,8 +30,8 @@ export const uploadNewPhoto = async (req, res) => {
       externalId: String(Math.floor(100000 + Math.random() * 900000))
     },
   });
-
-  res.status(200).json({ id: savedFile.id });
+  
+  return res.json(savedFile);
 };
 
 export const removeOneImage = async(req, res) =>{
