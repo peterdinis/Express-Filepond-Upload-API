@@ -16,6 +16,8 @@ app.use(exampleRoutes);
 
 dotenv.config();
 
-app.listen(8500, () => {
-    console.log("Applikácia beží na porte 8500");
+const PORT = process.env.PORT || 8500
+
+app.listen(PORT, () => {
+    console.log(`Applikácia beží na porte ${PORT}`);
 })
