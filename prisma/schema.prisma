@@ -11,8 +11,8 @@ datasource db {
 }
 
 model File {
-  id        Int      @id @default(autoincrement())
-  externalId String  @default("1000")
-  name      String
-  path      String
+  id         Int    @id @default(autoincrement())
+  externalId String @default("1000")
+  name       String
+  path       String
 }
