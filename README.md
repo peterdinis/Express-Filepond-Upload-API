@@ -15,22 +15,3 @@
 * create your .env file with your database credential
 * npx prisma migrate dev
 * npm run dev
-
-### Filepond frontend example
-
-serverUrl = http://localhost:8500/api/upload
-
-`<FilePond files={files}
-            onupdatefiles={handleFileUpload}
-            allowMultiple={false}
-            acceptedFileTypes={["image/*"]}
-            labelIdle="Vybrať obrázok"
-            server={serverUrl}
-            allowDrop={true}
-            allowImagePreview={true}
-            imagePreviewMaxHeight={550}
-            imagePreviewMarkupShow={true}
-            allowImageCrop={true}
-            labelTapToUndo="Skúsiť znova"
-            labelFileLoading="Nahrávam..."
-            labelFileAdded="Súbor bol úspešne nahraný"  />`
