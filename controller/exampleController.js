@@ -1,3 +1,3 @@
 export const exampleUploadFn = (req, res) => {
-    return res.send('OK')
+    return res.send('Api is working')
 }
