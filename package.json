@@ -1,7 +1,7 @@
 {
   "name": "express-filepond-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple backend server for using react-filepond",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --config nodemon.json ./server.js"

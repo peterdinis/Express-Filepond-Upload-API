@@ -1,12 +1,13 @@
-# Node Filepond API
+# Express Filepond API
 
-#### Simple api for access image uploaded from filepond
+#### Simple api for access image uploaded from your react filepond frontend
 
 #### Technologies:
 
 * Express.js
 * Prisma
 * Postgresql
+* Multer
 
 ### How to run
 
